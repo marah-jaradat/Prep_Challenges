@@ -69,9 +69,26 @@ const oddFiltration = (arr) => {
 // ------------------------
 
 const cvsFiltration = (arr, query) => {
-  return arr.filter((el) => el.yearsOfExperience > 4 && el.tech == "JS");
+  const x = arr.filter(function (obj) {
+    return obj.tech == "JS" && obj.yearsOfExperience > 5;
+  });
+  const y = x.filter((obj) => {
+    if (obj.firstName == null) {
+      obj.fullName = obj.LastName;
+    } else if (obj.LastName == null) {
+      obj.fullName = obj.firstName;
+    } else {
+      obj.fullName = obj.firstName + " " + obj.LastName;
+    }
+    return (
+      delete obj.firstName &&
+      delete obj.LastName &&
+      delete obj.yearsOfExperience &&
+      obj
+    );
+  });
+  return y;
 };
-
 // 3) ---------------------
 //
 // Given an array of words filter the names that contains one of the vowels (a, e, i, o, u)
@@ -82,9 +99,8 @@ const cvsFiltration = (arr, query) => {
 // ------------------------
 
 const vowelsFiltration = (arr) => {
-  let rex = /^[bcdfghjklmnpqrstvwxz]/i;
-  let results = arr.filter((str) => rex.test(str));
-  return results;
+  let vowel = arr.filter((str) => !/[aeiou]/.test(str));
+  return vowel;
 };
 
 // 4) ---------------------
