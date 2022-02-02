@@ -47,9 +47,9 @@ const LastWord_2 = (str) => {
 // ------------------------
 
 const replaceWords = (str) => {
-  let x = str.replace("I", "we");
-  let y = str.replace("am", "are");
-  let z = str.replace("was", "were");
+  let x = str.replace(/I/g, "we");
+  let y = str.replace(/am/g, "are");
+  let z = str.replace(/was/g, "were");
   return x, y, z;
 };
 
@@ -61,9 +61,10 @@ const replaceWords = (str) => {
 // ------------------------
 
 const arrToStr = (arr) => {
-  let x = arr.join(" ");
-  let y = x.split(",");
-  return y;
+  const regex = /Dog/i;
+  return arr.replace(regex, ",");
+
+  return arr.join(" ");
 };
 
 // 5) ---------------------
