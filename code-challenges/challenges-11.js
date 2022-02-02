@@ -57,8 +57,8 @@ function square(arr) {
 //
 
 function fullName(arr) {
-  let myMap = arr.map((ma = arr.get("key1")));
-  return myMap;
+  let fullNamesArr = arr.map((ele) => `${ele.firstName} ${ele.lastName}`);
+  return fullNamesArr;
 }
 
 // 3) ---------------------
@@ -190,7 +190,9 @@ function gradesAvg(arr) {
 // -------------
 
 function studentsResult(arr) {
-  // write your code here
+  arr.map((each) => (each.result = each.avg >= 50 ? "Passed" : "Failed"));
+
+  return arr;
 }
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
