@@ -47,10 +47,6 @@ const LastWord_2 = (str) => {
 // ------------------------
 
 const replaceWords = (str) => {
-  // let x = str.replace(/I/g, "we");
-  // let y = str.replace(/am/g, "are");
-  // let z = str.replace(/was/g, "were");
-  // return x, y, z;
   let arr = [];
   arr = str.split(" ");
   if (arr[0] == "I") {
