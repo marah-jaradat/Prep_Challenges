@@ -57,9 +57,11 @@ function square(arr) {
 //
 
 function fullName(arr) {
+
   let full = arr.map((value) => `${value.firstName} ${value.lastName}`);
   return full;
 }
+
 
 // 3) ---------------------
 //
@@ -202,6 +204,7 @@ function gradesAvg(arr) {
 // -------------
 
 function studentsResult(arr) {
+
   const myArray = arr.map((value) => ({
     ...value,
     ...(value.gradsList.reduce((a, b) => a + b) / value.gradsList.length >=
@@ -210,6 +213,7 @@ function studentsResult(arr) {
       50 && { result: "Failed" }),
   }));
   return myArray;
+
 }
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
