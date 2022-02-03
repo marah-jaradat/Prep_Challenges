@@ -199,7 +199,6 @@ function studentsResult(arr) {
   return arr.map((mark) => {
     if (mark.avg > 50) mark.result = "Passed";
     else mark.result = "Failed";
-
     return mark;
   });
 }
