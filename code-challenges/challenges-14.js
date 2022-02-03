@@ -47,10 +47,22 @@ const LastWord_2 = (str) => {
 // ------------------------
 
 const replaceWords = (str) => {
-  let x = str.replace(/I/g, "we");
-  let y = str.replace(/am/g, "are");
-  let z = str.replace(/was/g, "were");
-  return x, y, z;
+  // let x = str.replace(/I/g, "we");
+  // let y = str.replace(/am/g, "are");
+  // let z = str.replace(/was/g, "were");
+  // return x, y, z;
+  let arr = [];
+  arr = str.split(" ");
+  if (arr[0] == "I") {
+    arr.splice(0, 1, "We");
+  }
+  if (arr[1] == "am") {
+    arr.splice(1, 1, "are");
+  }
+  if (arr[1] == "was") {
+    arr.splice(1, 1, "were");
+  }
+  return arr.join(" ");
 };
 
 // 4) ---------------------
@@ -61,9 +73,7 @@ const replaceWords = (str) => {
 // ------------------------
 
 const arrToStr = (arr) => {
-  const regex = /Dog/i;
-  return arr.replace(regex, ",");
-
+  arr.splice(4, 1, arr[4] + ",");
   return arr.join(" ");
 };
 
