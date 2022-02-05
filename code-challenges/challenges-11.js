@@ -57,9 +57,11 @@ function square(arr) {
 //
 
 function fullName(arr) {
+
   let full = arr.map((value) => `${value.firstName} ${value.lastName}`);
   return full;
 }
+
 
 // 3) ---------------------
 //
@@ -196,11 +198,13 @@ function gradesAvg(arr) {
 // -------------
 
 function studentsResult(arr) {
+
   return arr.map((mark) => {
     if (mark.avg > 50) mark.result = "Passed";
     else mark.result = "Failed";
     return mark;
   });
+
 }
 
 module.exports = { square, fullName, gradesAvg, studentsResult };
