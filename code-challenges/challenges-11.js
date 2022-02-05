@@ -122,15 +122,9 @@ function fullName(arr) {
 // -------------
 
 function gradesAvg(arr) {
-  // let grades = arr.map((value) => ({
-  //   ...value,
-  //   avg: value.gradsList.reduce((n, m) => n + m) / value.gradsList.length,
-  // }));
-  // return grades;
   function avgFunction(arr) {
-    let total = arr.reduce((num1, num2) => num1 + num2, 0) / arr.length;
-
-    return total;
+    let avgFun = arr.reduce((num1, num2) => num1 + num2, 0) / arr.length;
+    return avgFun;
   }
 
   arr.map((each) => (each.avg = avgFunction(each.gradsList)));
@@ -205,14 +199,11 @@ function gradesAvg(arr) {
 
 function studentsResult(arr) {
 
-  const myArray = arr.map((value) => ({
-    ...value,
-    ...(value.gradsList.reduce((a, b) => a + b) / value.gradsList.length >=
-      50 && { result: "Passed" }),
-    ...(value.gradsList.reduce((a, b) => a + b) / value.gradsList.length <
-      50 && { result: "Failed" }),
-  }));
-  return myArray;
+  return arr.map((mark) => {
+    if (mark.avg > 50) mark.result = "Passed";
+    else mark.result = "Failed";
+    return mark;
+  });
 
 }
 
