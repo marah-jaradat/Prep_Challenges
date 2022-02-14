@@ -30,7 +30,7 @@ const reverseString = (string) => {
 // Input <= ["hello ^_^ ","Hi ^_^" ,"What's up ^_-" ,"lol"] , Output => ["hello ^_^ ","Hi ^_^" ] ;
 
 const detectFace = (arr) => {
-  //write your code here ...
+  return arr.filter((include) => include.includes("^_^"));
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -44,7 +44,11 @@ const detectFace = (arr) => {
 // Input <= "coding" output =>"cdn"
 
 const eveCharacter = (str) => {
-  //write your code here ...
+  let newString = "";
+  for (let i = 0; str.length > i; i = i + 2) {
+    newString += str[i];
+  }
+  return newString;
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -62,9 +66,7 @@ const eveCharacter = (str) => {
 // Output:
 // [["grilled chicken"], ["baked chicken"], ["fried chicken"]];
 
-const chickenGradients = (arr) => {
-  //write your code here ...
-};
+const chickenGradients = (arr) => {};
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { reverseString, detectFace, eveCharacter, chickenGradients };
