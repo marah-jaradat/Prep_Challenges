@@ -16,6 +16,7 @@
 
 const recursionPattern = (int1, int2) => {
   let arr = [int1];
+
   let num = int1;
   while (num > 0) {
     num = num - int2;
@@ -29,6 +30,7 @@ const recursionPattern = (int1, int2) => {
   }
   return arr;
 };
+
 
 // -------------------------------------------------------------------------------------------------------
 
@@ -50,6 +52,7 @@ const filterLinks = (str) => {
   let fil = /(www.)+([\w])+(.com|.org|.net)/g;
   let filLink = str.match(fil).join();
   return filLink;
+
 };
 // -------------------------------------------------------------------------------------------------------
 
@@ -78,6 +81,7 @@ const isPalindrome = (str) => {
     return false;
   }
 };
+
 
 // -------------------------------------------------------------------------------------------------------
 
